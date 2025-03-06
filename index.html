@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog's Game</title>
+    <script src="phaser.js"></script>
+    <script src="scenes/menu.js"></script>
+    <script src="scenes/game.js"></script>
+    <script src="scenes/lose.js"></script>
+    <script src="scenes/win.js"></script>
+
+    <style> 
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background-color: #000000;
+        } 
+    </style>
+</head>
+
+<body>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 1200,
+            height: 600,
+            physics: {
+            default: 'arcade',
+                arcade: {
+                    gravity: { y: 500 },
+                    debug: false
+                }
+            },
+            scene: [Menu, Game, Lose, Win]
+        };
+
+        const game = new Phaser.Game(config);
+
+    </script>
+</body>
+</html>
