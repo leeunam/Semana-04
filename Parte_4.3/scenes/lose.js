@@ -1,6 +1,6 @@
-class Lost extends Phaser.Scene {
+class Lose extends Phaser.Scene {
     constructor() {
-        super({ key: 'Lost' });
+        super({ key: 'Lose' });
     }
     preload() {
         // #01: PRÉ-CARREGA OS ARQUIVOS DO JOGO
@@ -12,7 +12,7 @@ class Lost extends Phaser.Scene {
         let bg = this.add.image(600, 300, 'bgLost').setScale(4); // cria o background
         bg.setAlpha(0.4); // diminui a opacidade do background
 
-        // #03: TÍTULO DA CENA
+        // #02.1: TÍTULO DA CENA
         this.add.text(480, 150, "Você PERDEU!", { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             color: "#FFFFFF",  // coloca a cor no branco
@@ -20,16 +20,16 @@ class Lost extends Phaser.Scene {
             fontStyle: "bold" // estilo da fonte
         });
 
-        // #04: NOTAS
+        // #02.2: NOTAS
         this.add.image(900, 270, 'alerta').setScale(0.2); // adiciona imagem
         this.add.text(200, 250, "Não encoste em objetos com este símbolo:", { // adiciona texto
             fontFamily: 'Arial', // troca a fonte
             color: "#FFFFFF", // coloca a cor no branco
             fontSize: 35, // tamanho da fonte
         });
-  
-        // 05: BOTÃO RESTART
-        this.restart = this.add.text(600, 380, 'REINICIAR',{ // adiciona texto
+
+        // 02.3: BOTÃO RESTART
+        this.restart = this.add.text(600, 380, 'REINICIAR', { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             fontSize: 30, // tamanho da fonte
             color: '#000000', // coloca a cor no preto

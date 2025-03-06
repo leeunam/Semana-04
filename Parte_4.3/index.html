@@ -7,7 +7,7 @@
     <script src="phaser.js"></script>
     <script src="scenes/menu.js"></script>
     <script src="scenes/game.js"></script>
-    <script src="scenes/lost.js"></script>
+    <script src="scenes/lose.js"></script>
     <script src="scenes/win.js"></script>
 
     <style> 
@@ -35,7 +35,7 @@
                     debug: false
                 }
             },
-            scene: [Menu, Game, Lost, Win]
+            scene: [Menu, Game, Lose, Win]
         };
 
         const game = new Phaser.Game(config);

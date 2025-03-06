@@ -15,7 +15,7 @@ class Menu extends Phaser.Scene {
         let bg = this.add.image(600, 300, 'bgMenu').setScale(0.2); // cria o background
         bg.setAlpha(0.4); // diminui a opacidade do background
 
-        // #03: TÍTULO DO JOGO
+        // #02.1: TÍTULO DO JOGO
         this.add.text(480, 150, "Dog's Game", { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             color: "#FFFFFF", // coloca a cor no branco
@@ -23,24 +23,60 @@ class Menu extends Phaser.Scene {
             fontStyle: "bold" // estilo da fonte
         });
 
-        // #04: INSTRUÇÕES DO JOGO 
-        this.add.text(740, 200, "Não encoste em objetos com este símbolo:", { // adiciona texto
+        // #02.2: CONTROLES DO JOGO 
+        this.add.text(30, 400, "Controles do jogo:", { // adiciona texto
+            fontFamily: 'Segoe UI', // troca a fonte
+            color: "#FFFFFF", // coloca a cor no branco
+            fontSize: 30, // tamanho da fonte
+            fontStyle: "bold" // estilo da fonte
+        });
+
+        this.add.text(30, 450, "seta esquerda/A - movimentar para esquerda", { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             color: "#FFFFFF",  // coloca a cor no branco
             fontSize: 20, // tamanho da fonte
             backgroundColor: '#000000' // fundo preto
         });
-        this.add.image(1140, 216, 'alert').setScale(0.2); // adiciona a imagem do alerta
 
-        this.add.text(735, 280, "Encontre sua Dona \n (ela terá este simbolo:)", { // adiciona texto e faz uma quebra de linha com '\n'
+        this.add.text(30, 490, "seta direita/D - movimentar para direita", { // adiciona texto
+            fontFamily: 'Segoe UI', // troca a fonte
+            color: "#FFFFFF",  // coloca a cor no branco
+            fontSize: 20, // tamanho da fonte
+            backgroundColor: '#000000' // fundo preto
+        });
+
+        this.add.text(30, 530, "seta para cima/W - movimentar para cima (pular)", { // adiciona texto
+            fontFamily: 'Segoe UI', // troca a fonte
+            color: "#FFFFFF",  // coloca a cor no branco
+            fontSize: 20, // tamanho da fonte
+            backgroundColor: '#000000' // fundo preto
+        });
+
+        // #02.3: INSTRUÇÕES DO JOGO 
+        this.add.text(700, 400, "Instruções do jogo:", { // adiciona texto
+            fontFamily: 'Segoe UI', // troca a fonte
+            color: "#FFFFFF", // coloca a cor no branco
+            fontSize: 30, // tamanho da fonte
+            fontStyle: "bold" // estilo da fonte
+        });
+        this.add.text(740, 460, "- Não encoste em objetos com este símbolo", { // adiciona texto
+            fontFamily: 'Segoe UI', // troca a fonte
+            color: "#FFFFFF",  // coloca a cor no branco
+            fontSize: 20, // tamanho da fonte
+            backgroundColor: '#000000' // fundo preto
+        });
+
+        this.add.image(710, 470, 'alert').setScale(0.2); // adiciona a imagem do alerta
+
+        this.add.text(740, 520, "- Encontre sua Dona, ela terá este simbolo", { // adiciona texto e faz uma quebra de linha com '\n'
             fontFamily: 'Segoe UI', // troca a fonte
             color: "#FFFFFF", // coloca a cor no branco
             fontSize: 20, // tamanho da fonte
             backgroundColor: '#000000' // fundo preto
         });
-        this.add.image(980, 300, 'star').setScale(0.2); // adiciona a imagem da estrela
+        this.add.image(710, 530, 'star').setScale(0.15); // adiciona a imagem da estrela
 
-        // 05: BOTÃO PLAY
+        // 02.4: BOTÃO PLAY
         this.start = this.add.image(600, 300, 'playButton').setInteractive();  // cria imagem do botão play e define que é interativo
         const addHoverEffect = (start) => { // adiciona efeito em algo 9nesse caso o objeto (start)
             start.on('pointerover', () => { // se mouse esta em cima do botão fazer o que está abaixo:
@@ -53,7 +89,7 @@ class Menu extends Phaser.Scene {
             });
             start.on('pointerout', () => start.setScale(1)); // se mouse sair do botão voltar a escala
         };
-        
+
         addHoverEffect(this.start); // adiciona o efeito de passar o mouse
 
         this.start.on('pointerdown', () => { // transição de cena ao clicar no botão play

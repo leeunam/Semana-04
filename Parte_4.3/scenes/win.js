@@ -11,16 +11,16 @@ class Win extends Phaser.Scene {
         let bg = this.add.image(600, 300, 'bgWin'); // cria o background
         bg.setAlpha(0.4); // diminui a opacidade do background
 
-        // #03: TÍTULO DA CENA
+        // #02.2: TÍTULO DA CENA
         this.add.text(480, 150, "Você GANHOU!", { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             color: "#FFFFFF",  // coloca a cor no branco
             fontSize: 40, // tamanho da fonte
             fontStyle: "bold" // estilo da fonte
         });
-  
-        // 03: BOTÃO REPLAY
-        this.replay = this.add.text(600, 380, 'Jogar Denovo',{ // adiciona texto
+
+        // 02.3: BOTÃO REPLAY
+        this.replay = this.add.text(600, 380, 'Jogar Denovo', { // adiciona texto
             fontFamily: 'Segoe UI', // troca a fonte
             fontSize: 30, // tamanho da fonte
             color: '#000000', // coloca a cor no preto
